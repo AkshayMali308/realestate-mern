@@ -17,9 +17,7 @@ connectDB();
 const app = express();
 
 
-
-
-app.use(cors({ origin: process.env.CLIENT_URL || "*", credentials: true }));
+app.use(cors({ origin: "https://realestate-mern-wheat.vercel.app/", credentials: true }));
 app.use(express.json({ limit: "5mb" }));
 if (process.env.NODE_ENV !== "production") app.use(morgan("dev"));
 
@@ -39,9 +37,5 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-app.use(
-  cors({
-    origin: "https://vercel.com/akshay-s-project26/realestate-mern/9Jjqs53rEMS3N3JoMMibRE3R5ne8",
-    credentials: true,
-  })
-);
+
+
